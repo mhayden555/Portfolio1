@@ -1167,19 +1167,15 @@ section,
   border-color: var(--accent-color);
 }
 
+
+/* General left-nav styling */
 .left-nav {
   position: fixed;
   top: 25%;
-  /* Center the element vertically */
   left: 10px;
-  /* Fixed distance from the left */
   width: 250px;
-  /* Fixed width */
-  transform: translateY(-50%);
-  /* Adjust the position to be vertically centered */
   z-index: 1000;
-  /* Ensure it's on top of other content */
-  /* margin-left: 220px; */
+  transition: transform 0.3s ease;
 }
 
 #overview .col-lg-8,
@@ -1188,6 +1184,7 @@ section,
 #method .col-lg-8,
 #research .col-lg-8,
 #modeling .col-lg-8,
+#requirements .col-lg-8,
 #frameworks .col-lg-8,
 #refinement .col-lg-8,
 #conclusion .col-lg-8,
@@ -1201,12 +1198,25 @@ section,
 #method,
 #research,
 #modeling,
+#requirements,
 #frameworks,
 #refinement,
 #conclusion,
 #workscited {
   scroll-margin-top: 160px;
 }
+
+/* #overview,
+#executive_summary,
+#method,
+#research,
+#modeling,
+#frameworks,
+#refinement,
+#conclusion,
+#workscited h3 {
+  font-family: ;
+} */
 
 #overview .portfolio-details-slider img {
   width: 100%;
@@ -1266,6 +1276,7 @@ section,
 }
 
 /* FIX Make responsive for tablet size */
+/* use percentage instead of px */
 /* @media (max-width: 3092px) {
   .project-info {
     margin-left: 290px; 

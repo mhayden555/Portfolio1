@@ -63,10 +63,19 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
+html,
 body {
-  color: var(--default-color);
-  background-color: varx(--background-color);
-  font-family: var(--default-font);
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  /* This makes the main content area take up the available space */
+  background-color: var(--background-color);
+  /* Ensure background color extends */
 }
 
 a {
@@ -80,7 +89,7 @@ a:hover {
   text-decoration: none;
 }
 
-h2{
+h2 {
   font-family: "TanPearl";
 }
 
@@ -449,9 +458,11 @@ h6 {
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
+  /* Background color should match the page */
   font-size: 14px;
   text-align: center;
   padding: 30px 0;
+  width: 100%;
   position: relative;
 }
 
@@ -641,6 +652,7 @@ section,
 }
 
 @media (max-width: 1199px) {
+
   section,
   .section {
     scroll-margin-top: 66px;
@@ -1277,32 +1289,6 @@ section,
 }
 
 .portfolio .portfolio-content:hover img {
-  transform: scale(1.1);
-}
-
-/* Ensure the inner links like preview-link don't interfere */
-.portfolio-link .portfolio-info .preview-link,
-.portfolio-link .portfolio-info .details-link {
-  pointer-events: all; /* Ensure these links still work */
-}
-
-.portfolio-link {
-  display: block;
-  position: relative;
-}
-
-.portfolio-link .portfolio-content {
-  position: relative;
-  display: block;
-  text-decoration: none;
-}
-
-/* Ensure the hover effect works the same */
-.portfolio-link:hover .portfolio-info {
-  opacity: 1;
-}
-
-.portfolio-link:hover img {
   transform: scale(1.1);
 }
 

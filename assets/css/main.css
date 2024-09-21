@@ -1168,159 +1168,6 @@ section,
 }
 
 
-/* General left-nav styling */
-.left-nav {
-  position: fixed;
-  top: 25%;
-  left: 10px;
-  width: 250px;
-  z-index: 1000;
-  transition: transform 0.3s ease;
-}
-
-#overview .col-lg-8,
-#overview .col-lg-4,
-#executive_summary .col-lg-8,
-#method .col-lg-8,
-#research .col-lg-8,
-#modeling .col-lg-8,
-#requirements .col-lg-8,
-#frameworks .col-lg-8,
-#refinement .col-lg-8,
-#conclusion .col-lg-8,
-#workscited .col-lg-8 {
-  margin-left: 290px; 
-  margin-top: 20px;
-}
-
-#overview,
-#executive_summary,
-#method,
-#research,
-#modeling,
-#requirements,
-#frameworks,
-#refinement,
-#conclusion,
-#workscited {
-  scroll-margin-top: 160px;
-}
-
-/* #overview,
-#executive_summary,
-#method,
-#research,
-#modeling,
-#frameworks,
-#refinement,
-#conclusion,
-#workscited h3 {
-  font-family: ;
-} */
-
-#overview .portfolio-details-slider img {
-  width: 100%;
-  margin-top: 10px;
-}
-
-#overview .portfolio-details-slider .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-#overview .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-  opacity: 1;
-}
-
-#overview .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-
-/* Project Information */
-.project-info {
-  background-color: var(--surface-color); /* Example background color */
-  margin-left: 290px; /* makes spacing to the left for side navigation */
-  margin-right: 280px;
-  padding: 40px 20px;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-}
-
-.project-info h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  font-weight: 600;
-  font-family: "TanPearl";
-  text-transform: uppercase;
-}
-
-.project-info p {
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-/* Desktop grid layout */
-.project-info .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns for desktop */
-  gap: 20px; /* Space between items */
-}
-
-.project-info .info-item {
-  background-color: transparent; /* No background */
-  text-align: center;
-  padding: 10px;
-}
-
-/* FIX Make responsive for tablet size */
-/* use percentage instead of px */
-/* @media (max-width: 3092px) {
-  .project-info {
-    margin-left: 290px; 
-    margin-right: 40px;
- 
-  }
-}
-
-@media (max-width: 1992px) {
-  .project-info {
-    margin-left: 290px; 
-    margin-right: 40px;
- 
-  }
-} */
-
-/* Tablet view (2 columns) */
-@media (max-width: 991px) {
-  .project-info .container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
-  }
-  .project-info {
-    margin-left: 290px; /* makes spacing to the left for side navigation */
-    margin-right: 0px;
-  
-  }
-}
-
-/* Mobile view (1 column) */
-@media (max-width: 767px) {
-  .project-info .container {
-    grid-template-columns: 1fr; /* 1 column for mobile */
-  }
-
-  .project-info h3 {
-    font-size: 20px; /* Smaller font size for headings on mobile */
-  }
-
-  .project-info p {
-    font-size: 14px; /* Smaller font size for paragraphs on mobile */
-  }
-}
-
-
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
@@ -1431,6 +1278,95 @@ section,
 
 .portfolio .portfolio-content:hover img {
   transform: scale(1.1);
+}
+
+/* Ensure the inner links like preview-link don't interfere */
+.portfolio-link .portfolio-info .preview-link,
+.portfolio-link .portfolio-info .details-link {
+  pointer-events: all; /* Ensure these links still work */
+}
+
+.portfolio-link {
+  display: block;
+  position: relative;
+}
+
+.portfolio-link .portfolio-content {
+  position: relative;
+  display: block;
+  text-decoration: none;
+}
+
+/* Ensure the hover effect works the same */
+.portfolio-link:hover .portfolio-info {
+  opacity: 1;
+}
+
+.portfolio-link:hover img {
+  transform: scale(1.1);
+}
+
+
+/*--------------------------------------------------------------
+# Portfolio Details Section
+--------------------------------------------------------------*/
+.portfolio-details .portfolio-details-slider img {
+  width: 100%;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  opacity: 1;
+}
+
+.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--accent-color);
+}
+
+.portfolio-details .portfolio-info {
+  background-color: var(--surface-color);
+  padding: 30px;
+  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-details .portfolio-info h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.portfolio-details .portfolio-info ul {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+}
+
+.portfolio-details .portfolio-info ul li+li {
+  margin-top: 10px;
+}
+
+.portfolio-details .portfolio-description {
+  padding-top: 30px;
+}
+
+.portfolio-details .portfolio-description h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.portfolio-details .portfolio-description p {
+  padding: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
 /*--------------------------------------------------------------

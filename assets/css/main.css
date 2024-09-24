@@ -1231,6 +1231,11 @@ section,
   transition: 0.3s;
 }
 
+.portfolio-info a{
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
 .portfolio .portfolio-content .portfolio-info {
   opacity: 0;
   position: absolute;

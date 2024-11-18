@@ -10,7 +10,6 @@
   <meta name="keywords"
     content="Michelle Hayden, portfolio, graphic design, photography, creative direction, digital art, visual storytelling" />
   <meta name="author" content="Michelle Hayden" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="Michelle Hayden - Professional Portfolio" />
   <meta property="og:description"
     content="Explore Michelle Hayden's creative portfolio, showcasing work in graphic design and visual storytelling." />
@@ -86,26 +85,30 @@
   <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Initialize Rive instance
       const riveInstance = new rive.Rive({
         src: 'hayden_logo.riv', // Path to .riv file
         canvas: document.getElementById('riveCanvas'),
-        stateMachines: ['State Machine 1'], // Name of state machine
+        stateMachines: ['State Machine 1'], // Replace with your state machine
         autoplay: true,
       });
 
+      // Adjust canvas for high DPI (Retina displays)
+      const canvas = document.getElementById('riveCanvas');
+      const context = canvas.getContext('2d');
+      const devicePixelRatio = window.devicePixelRatio || 1;
+
+      // Set canvas dimensions
+      canvas.width = canvas.clientWidth * devicePixelRatio;
+      canvas.height = canvas.clientHeight * devicePixelRatio;
+      context.scale(devicePixelRatio, devicePixelRatio);
+
       // Optional: Toggle animation on click if desired
-      document.getElementById('riveCanvas').addEventListener('click', () => {
+      canvas.addEventListener('click', () => {
         riveInstance.play('Click'); // Adjust as needed based on your controls
       });
     });
 
-    const canvas = document.getElementById('riveCanvas');
-    const context = canvas.getContext('2d');
-    const devicePixelRatio = window.devicePixelRatio || 1;
-
-    // Set canvas dimensions
-    canvas.width = canvas.clientWidth * devicePixelRatio;
-    canvas.height = canvas.clientHeight * devicePixelRatio;
   </script>
 
 
@@ -123,11 +126,6 @@
       </div>
 
     </section><!-- /Hero Section -->
-
-    <!-- RIVE -->
-    <canvas id="riveCanvas" width="500" height="500"></canvas>
-
-
   </main>
 
   <!-- Footer -->

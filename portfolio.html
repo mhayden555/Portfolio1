@@ -5,12 +5,15 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Portfolio - Michelle Hayden | Web Design and Development</title>
-  <meta name="description" content="Browse the creative portfolio of Michelle Hayden, featuring web design, development, digital media, and visual storytelling projects. See how creativity meets professionalism." />
-  <meta name="keywords" content="Michelle Hayden portfolio, web design, development, graphic design, visual storytelling, creative projects" />
+  <meta name="description"
+    content="Browse the creative portfolio of Michelle Hayden, featuring web design, development, digital media, and visual storytelling projects. See how creativity meets professionalism." />
+  <meta name="keywords"
+    content="Michelle Hayden portfolio, web design, development, graphic design, visual storytelling, creative projects" />
   <meta name="author" content="Michelle Hayden" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="Portfolio - Michelle Hayden | Projects" />
-  <meta property="og:description" content="Explore Michelle Hayden's portfolio showcasing a range of graphic design and visual art projects." />
+  <meta property="og:description"
+    content="Explore Michelle Hayden's portfolio showcasing a range of graphic design and visual art projects." />
   <meta property="og:image" content="URL_TO_FEATURED_IMAGE" />
   <meta property="og:url" content="https://michelle-hayden.com/portfolio" />
   <meta name="robots" content="index, follow" />
@@ -50,15 +53,12 @@
 
 <body class="portfolio-page">
 
-  <!-- Nav Bar -->
+  <!-- Nav Bar with Rive Animation -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/Logo1 copy.png" alt="">
-        <!-- <h1 class="sitename">Hayden</h1> -->
+        <canvas id="riveCanvas" width="50" height="50"></canvas> <!-- Adjust canvas size as per your design -->
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -69,9 +69,34 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
+
+  <!-- RIVE -->
+  <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const riveInstance = new rive.Rive({
+        src: 'hayden_logo.riv', // Path to .riv file
+        canvas: document.getElementById('riveCanvas'),
+        stateMachines: ['State Machine 1'], // Name of state machine
+        autoplay: true,
+      });
+
+      // Optional: Toggle animation on click if desired
+      document.getElementById('riveCanvas').addEventListener('click', () => {
+        riveInstance.play('Click'); // Adjust as needed based on your controls
+      });
+    });
+
+    const canvas = document.getElementById('riveCanvas');
+    const context = canvas.getContext('2d');
+    const devicePixelRatio = window.devicePixelRatio || 1;
+
+    // Set canvas dimensions
+    canvas.width = canvas.clientWidth * devicePixelRatio;
+    canvas.height = canvas.clientHeight * devicePixelRatio;
+  </script>
 
   <main class="main">
 
@@ -117,7 +142,7 @@
                 </a>
               </div>
             </div>
-            
+
             <!-- Atlas -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-school">
               <div class="portfolio-content h-100">

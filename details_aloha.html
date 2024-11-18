@@ -5,15 +5,18 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Aloha - Michelle Hayden | Web Design & Development</title>
-  <meta name="description" content="Explore the 'Aloha' project by Michelle Hayden, highlighting branding, visual design, and cultural themes. Learn about the creative journey and final visuals." />
-  <meta name="keywords" content="Michelle Hayden, Aloha project, web design, development, branding, visual design, project showcase" />
+  <meta name="description"
+    content="Explore the 'Aloha' project by Michelle Hayden, highlighting branding, visual design, and cultural themes. Learn about the creative journey and final visuals." />
+  <meta name="keywords"
+    content="Michelle Hayden, Aloha project, web design, development, branding, visual design, project showcase" />
   <meta name="author" content="Michelle Hayden" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="Aloha Project - Michelle Hayden | Branding & Visual Design" />
-  <meta property="og:description" content="A deep dive into the 'Aloha' project by Michelle Hayden, focusing on cultural branding and visual design." />
+  <meta property="og:description"
+    content="A deep dive into the 'Aloha' project by Michelle Hayden, focusing on cultural branding and visual design." />
   <meta property="og:url" content="https://michelle-hayden.com/details_aloha.html" />
   <meta name="robots" content="index, follow" />
-  
+
 
   <!-- Favicons -->
   <link href="assets/img/Logo1 copy.png" rel="icon">
@@ -56,7 +59,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRHHHFKM6E"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-HRHHHFKM6E');
@@ -64,27 +67,51 @@
 
 <body class="portfolio-details-page">
 
-  <!-- Nav Bar -->
+  <!-- Nav Bar with Rive Animation -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/Logo1 copy.png" alt="seed of life logo">
-        <!-- <h1 class="sitename">Hayden</h1> -->
+        <canvas id="riveCanvas" width="50" height="50"></canvas> <!-- Adjust canvas size as per your design -->
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="portfolio.html" class="active">Portfolio</a></li>
-          <li><a href="https://drive.google.com/file/d/1472yFlN7AC_mMs3tti_xrNT1Yn5pdejQ/view?usp=sharing" target="_blank">Resume</a></li>
+          <li><a href="https://drive.google.com/file/d/1472yFlN7AC_mMs3tti_xrNT1Yn5pdejQ/view?usp=sharing"
+              target="_blank">Resume</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
+
+  <!-- RIVE -->
+  <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const riveInstance = new rive.Rive({
+        src: 'hayden_logo.riv', // Path to .riv file
+        canvas: document.getElementById('riveCanvas'),
+        stateMachines: ['State Machine 1'], // Name of state machine
+        autoplay: true,
+      });
+
+      // Optional: Toggle animation on click if desired
+      document.getElementById('riveCanvas').addEventListener('click', () => {
+        riveInstance.play('Click'); // Adjust as needed based on your controls
+      });
+    });
+
+    const canvas = document.getElementById('riveCanvas');
+    const context = canvas.getContext('2d');
+    const devicePixelRatio = window.devicePixelRatio || 1;
+
+    // Set canvas dimensions
+    canvas.width = canvas.clientWidth * devicePixelRatio;
+    canvas.height = canvas.clientHeight * devicePixelRatio;
+  </script>
+
 
   <main class="main">
 
@@ -101,7 +128,7 @@
       </nav>
     </div> <!-- /Bread Crumbs -->
 
-    
+
     <section id="portfolio-details" class="portfolio-details section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -152,13 +179,18 @@
               <ul>
                 <li><strong>Role</strong>: User Interface Designer and Developer</li>
                 <li><strong>Project date</strong>: Work in progress</li>
-                <li><strong>Project URL</strong>: <a href="https://mhayden555.github.io/Aloha/index.html" target="_blank">Aloha Site</a></li>
+                <li><strong>Project URL</strong>: <a href="https://mhayden555.github.io/Aloha/index.html"
+                    target="_blank">Aloha Site</a></li>
               </ul>
             </div>
             <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
               <h2>A Website About the Moon</h2>
               <p>
-                The Aloha Telescope project aims to bring astronomy to K-12 classrooms, reaching thousands of students and teachers. The program provides access to telescopic views of the moon and other celestial objects, expanding students' exposure to STEM. Aloha continues to enhance its curriculum with plans to extend its reach to more schools, including enabling daytime access to Georgia Tech telescopes for students in Hawaii. The initiative focuses on inspiring young minds through interactive astronomy education.</p>
+                The Aloha Telescope project aims to bring astronomy to K-12 classrooms, reaching thousands of students
+                and teachers. The program provides access to telescopic views of the moon and other celestial objects,
+                expanding students' exposure to STEM. Aloha continues to enhance its curriculum with plans to extend its
+                reach to more schools, including enabling daytime access to Georgia Tech telescopes for students in
+                Hawaii. The initiative focuses on inspiring young minds through interactive astronomy education.</p>
             </div>
           </div>
 

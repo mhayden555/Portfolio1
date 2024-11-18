@@ -5,12 +5,15 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Skeleton Key - Michelle Hayden | Web Design & Development</title>
-  <meta name="description" content="Explore the 'SK' project by Michelle Hayden, showcasing a dynamic approach to graphic design and branding. Discover the design choices and final outcomes." />
-  <meta name="keywords" content="Michelle Hayden, SK project, graphic design, prototyping, visual storytelling, project showcase" />
+  <meta name="description"
+    content="Explore the 'SK' project by Michelle Hayden, showcasing a dynamic approach to graphic design and branding. Discover the design choices and final outcomes." />
+  <meta name="keywords"
+    content="Michelle Hayden, SK project, graphic design, prototyping, visual storytelling, project showcase" />
   <meta name="author" content="Michelle Hayden" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="SK Project - Michelle Hayden | Web Design & Development" />
-  <meta property="og:description" content="A deep dive into the 'SK' project by Michelle Hayden, featuring impactful graphic design and branding solutions." />
+  <meta property="og:description"
+    content="A deep dive into the 'SK' project by Michelle Hayden, featuring impactful graphic design and branding solutions." />
   <meta property="og:url" content="https://michelle-hayden.com/details_sk.html" />
   <meta name="robots" content="index, follow" />
 
@@ -64,15 +67,12 @@
 
 <body class="portfolio-details-page">
 
-  <!-- Nav Bar -->
+  <!-- Nav Bar with Rive Animation -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/Logo1 copy.png" alt="seed of life logo">
-        <!-- <h1 class="sitename">Hayden</h1> -->
+        <canvas id="riveCanvas" width="50" height="50"></canvas> <!-- Adjust canvas size as per your design -->
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -83,9 +83,34 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
+
+  <!-- RIVE -->
+  <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const riveInstance = new rive.Rive({
+        src: 'hayden_logo.riv', // Path to .riv file
+        canvas: document.getElementById('riveCanvas'),
+        stateMachines: ['State Machine 1'], // Name of state machine
+        autoplay: true,
+      });
+
+      // Optional: Toggle animation on click if desired
+      document.getElementById('riveCanvas').addEventListener('click', () => {
+        riveInstance.play('Click'); // Adjust as needed based on your controls
+      });
+    });
+
+    const canvas = document.getElementById('riveCanvas');
+    const context = canvas.getContext('2d');
+    const devicePixelRatio = window.devicePixelRatio || 1;
+
+    // Set canvas dimensions
+    canvas.width = canvas.clientWidth * devicePixelRatio;
+    canvas.height = canvas.clientHeight * devicePixelRatio;
+  </script>
 
   <main class="main">
 
@@ -251,7 +276,8 @@
                     <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
                       <h2>Method</h2>
                       <p>
-                        Skeleton Key's development fully embraced the Goal-Directed Design (GDD) method, a systematic approach
+                        Skeleton Key's development fully embraced the Goal-Directed Design (GDD) method, a systematic
+                        approach
                         crafted by Alan Cooper. GDD was the cornerstone of our design process from inception to
                         completion.
                         Typically, this process starts with stakeholder and kickoff meetings and culminates in the final
@@ -291,7 +317,8 @@
                   <div class="col-lg-8">
 
                     <div class="portfolio-details-slider swiper init-swiper">
-                      <img src="assets/img/portfolio/SkeletonKey/SK Patterns.jpg" alt="behavioral patterns seen throughout reasearch phase">
+                      <img src="assets/img/portfolio/SkeletonKey/SK Patterns.jpg"
+                        alt="behavioral patterns seen throughout reasearch phase">
                     </div>
                   </div>
 
@@ -321,7 +348,8 @@
                   <div class="col-lg-8">
 
                     <div class="portfolio-details-slider swiper init-swiper">
-                      <img src="assets/img/portfolio/SkeletonKey/SK Personas.jpg" alt="personas developed off research for skeleton key">
+                      <img src="assets/img/portfolio/SkeletonKey/SK Personas.jpg"
+                        alt="personas developed off research for skeleton key">
                     </div>
                   </div>
 
@@ -351,7 +379,8 @@
                   <div class="col-lg-8">
 
                     <div class="portfolio-details-slider swiper init-swiper">
-                      <img src="assets/img/portfolio/SkeletonKey/SK Requirements.jpg" alt="requirements based off research for skeleton key">
+                      <img src="assets/img/portfolio/SkeletonKey/SK Requirements.jpg"
+                        alt="requirements based off research for skeleton key">
                     </div>
                   </div>
 
@@ -381,7 +410,8 @@
                   <div class="col-lg-8">
 
                     <div class="portfolio-details-slider swiper init-swiper">
-                      <img src="assets/img/portfolio/SkeletonKey/SK Wireframes.jpg" alt="wireframes created before design">
+                      <img src="assets/img/portfolio/SkeletonKey/SK Wireframes.jpg"
+                        alt="wireframes created before design">
                     </div>
                   </div>
 

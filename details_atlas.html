@@ -5,12 +5,15 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Atlas - Michelle Hayden | Web Design & Development</title>
-  <meta name="description" content="Explore the 'Atlas' project by Michelle Hayden, featuring a sophisticated digital art and graphic design approach. Discover the process and final results of this compelling project." />
-  <meta name="keywords" content="Michelle Hayden, Atlas project, digital art, graphic design, visual storytelling, project showcase" />
+  <meta name="description"
+    content="Explore the 'Atlas' project by Michelle Hayden, featuring a sophisticated digital art and graphic design approach. Discover the process and final results of this compelling project." />
+  <meta name="keywords"
+    content="Michelle Hayden, Atlas project, digital art, graphic design, visual storytelling, project showcase" />
   <meta name="author" content="Michelle Hayden" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="Atlas Project - Michelle Hayden | Web Design & Development" />
-  <meta property="og:description" content="An in-depth exploration of the 'Atlas' project by Michelle Hayden, showcasing creativity in app design and visual storytelling." />
+  <meta property="og:description"
+    content="An in-depth exploration of the 'Atlas' project by Michelle Hayden, showcasing creativity in app design and visual storytelling." />
   <meta property="og:url" content="https://michelle-hayden.com/details_atlas.html" />
   <meta name="robots" content="index, follow" />
 
@@ -63,15 +66,12 @@
 
 <body class="portfolio-details-page">
 
-  <!-- Nav Bar -->
+  <!-- Nav Bar with Rive Animation -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/Logo1 copy.png" alt="seed of life logo">
-        <!-- <h1 class="sitename">Hayden</h1> -->
+        <canvas id="riveCanvas" width="50" height="50"></canvas> <!-- Adjust canvas size as per your design -->
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -82,9 +82,36 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
+
+  <!-- RIVE -->
+  <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const riveInstance = new rive.Rive({
+        src: 'hayden_logo.riv', // Path to .riv file
+        canvas: document.getElementById('riveCanvas'),
+        stateMachines: ['State Machine 1'], // Name of state machine
+        autoplay: true,
+      });
+
+      // Optional: Toggle animation on click if desired
+      document.getElementById('riveCanvas').addEventListener('click', () => {
+        riveInstance.play('Click'); // Adjust as needed based on your controls
+      });
+    });
+
+    const canvas = document.getElementById('riveCanvas');
+    const context = canvas.getContext('2d');
+    const devicePixelRatio = window.devicePixelRatio || 1;
+
+    // Set canvas dimensions
+    canvas.width = canvas.clientWidth * devicePixelRatio;
+    canvas.height = canvas.clientHeight * devicePixelRatio;
+  </script>
+
+
 
   <main class="main">
 
@@ -251,7 +278,8 @@
                     <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
                       <h2>Method</h2>
                       <p>
-                        The development of Atlas fully embraced the Goal-Directed Design (GDD) method, a systematic approach
+                        The development of Atlas fully embraced the Goal-Directed Design (GDD) method, a systematic
+                        approach
                         crafted by Alan Cooper. GDD was the cornerstone of our design process from inception to
                         completion.
                         Typically, this process starts with stakeholder and kickoff meetings and culminates in the final
@@ -291,7 +319,8 @@
                   <div class="col-lg-8">
 
                     <div class="portfolio-details-slider swiper init-swiper">
-                      <img src="assets/img/portfolio/Atlas/Patterns.png" alt="patterns found throughout research for atlas">
+                      <img src="assets/img/portfolio/Atlas/Patterns.png"
+                        alt="patterns found throughout research for atlas">
                     </div>
                   </div>
 
@@ -327,7 +356,8 @@
                   <div class="col-lg-8">
 
                     <div class="portfolio-details-slider swiper init-swiper">
-                      <img src="assets/img/portfolio/Atlas/Personas.png" alt="personas created based off patterns for atlas">
+                      <img src="assets/img/portfolio/Atlas/Personas.png"
+                        alt="personas created based off patterns for atlas">
                     </div>
                   </div>
 
@@ -361,7 +391,8 @@
                   <div class="col-lg-8">
 
                     <div class="portfolio-details-slider swiper init-swiper">
-                      <img src="assets/img/portfolio/Atlas/Requirements.png" alt="requirements based off persona expectations for atlas">
+                      <img src="assets/img/portfolio/Atlas/Requirements.png"
+                        alt="requirements based off persona expectations for atlas">
                     </div>
                   </div>
 
@@ -430,7 +461,8 @@
                   <div class="col-lg-8">
 
                     <div class="portfolio-details-slider swiper init-swiper">
-                      <img src="assets/img/portfolio/Atlas/Final Project.png" alt="display of individual screens for the final atlas project">
+                      <img src="assets/img/portfolio/Atlas/Final Project.png"
+                        alt="display of individual screens for the final atlas project">
                     </div>
                   </div>
 

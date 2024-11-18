@@ -5,12 +5,15 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Michelle Hayden | Design and Development</title>
-  <meta name="description" content="Explore the professional portfolio of Michelle Hayden. Discover expertise in graphic design, photography, and creative direction. Get in touch for collaboration and creative services." />
-  <meta name="keywords" content="Michelle Hayden, portfolio, graphic design, photography, creative direction, digital art, visual storytelling" />
+  <meta name="description"
+    content="Explore the professional portfolio of Michelle Hayden. Discover expertise in graphic design, photography, and creative direction. Get in touch for collaboration and creative services." />
+  <meta name="keywords"
+    content="Michelle Hayden, portfolio, graphic design, photography, creative direction, digital art, visual storytelling" />
   <meta name="author" content="Michelle Hayden" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="Michelle Hayden - Professional Portfolio" />
-  <meta property="og:description" content="Explore Michelle Hayden's creative portfolio, showcasing work in graphic design and visual storytelling." />
+  <meta property="og:description"
+    content="Explore Michelle Hayden's creative portfolio, showcasing work in graphic design and visual storytelling." />
   <meta property="og:url" content="https://michelle-hayden.com/" />
   <meta name="robots" content="index, follow" />
   <!-- Favicons -->
@@ -52,7 +55,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRHHHFKM6E"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-HRHHHFKM6E');
@@ -60,27 +63,51 @@
 
 <body class="index-page">
 
-  <!-- Nav Bar -->
+  <!-- Nav Bar with Rive Animation -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/Logo1 copy.png" alt="seed of life logo">
-        <!-- <h1 class="sitename">Hayden</h1> -->
+        <canvas id="riveCanvas" width="50" height="50"></canvas> <!-- Adjust canvas size as per your design -->
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="https://drive.google.com/file/d/1472yFlN7AC_mMs3tti_xrNT1Yn5pdejQ/view?usp=sharing" target="_blank">Resume</a></li>
+          <li><a href="https://drive.google.com/file/d/1472yFlN7AC_mMs3tti_xrNT1Yn5pdejQ/view?usp=sharing"
+              target="_blank">Resume</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
+
+  <!-- RIVE -->
+  <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const riveInstance = new rive.Rive({
+        src: 'hayden_logo.riv', // Path to .riv file
+        canvas: document.getElementById('riveCanvas'),
+        stateMachines: ['State Machine 1'], // Name of state machine
+        autoplay: true,
+      });
+
+      // Optional: Toggle animation on click if desired
+      document.getElementById('riveCanvas').addEventListener('click', () => {
+        riveInstance.play('Click'); // Adjust as needed based on your controls
+      });
+    });
+
+    const canvas = document.getElementById('riveCanvas');
+    const context = canvas.getContext('2d');
+    const devicePixelRatio = window.devicePixelRatio || 1;
+
+    // Set canvas dimensions
+    canvas.width = canvas.clientWidth * devicePixelRatio;
+    canvas.height = canvas.clientHeight * devicePixelRatio;
+  </script>
+
 
   <main class="main">
 
@@ -96,6 +123,10 @@
       </div>
 
     </section><!-- /Hero Section -->
+
+    <!-- RIVE -->
+    <canvas id="riveCanvas" width="500" height="500"></canvas>
+
 
   </main>
 

@@ -5,12 +5,15 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Kiwi - Michelle Hayden | Creative Strategy & Design</title>
-  <meta name="description" content="Explore the 'Kiwi' project by Michelle Hayden, where creative strategy meets innovative design solutions. See the process and final outcomes." />
-  <meta name="keywords" content="Michelle Hayden, Kiwi project, creative strategy, innovative design, project showcase" />
+  <meta name="description"
+    content="Explore the 'Kiwi' project by Michelle Hayden, where creative strategy meets innovative design solutions. See the process and final outcomes." />
+  <meta name="keywords"
+    content="Michelle Hayden, Kiwi project, creative strategy, innovative design, project showcase" />
   <meta name="author" content="Michelle Hayden" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta property="og:title" content="Kiwi Project - Michelle Hayden | Creative Strategy & Design" />
-  <meta property="og:description" content="An inside look at the 'Kiwi' project by Michelle Hayden, focusing on creative strategy and innovative design solutions." />
+  <meta property="og:description"
+    content="An inside look at the 'Kiwi' project by Michelle Hayden, focusing on creative strategy and innovative design solutions." />
   <meta property="og:url" content="https://michelle-hayden.com/details_kiwi.html" />
   <meta name="robots" content="index, follow" />
 
@@ -64,15 +67,12 @@
 
 <body class="portfolio-details-page">
 
-  <!-- Nav Bar -->
+  <!-- Nav Bar with Rive Animation -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/Logo1 copy.png" alt="seed of life logo">
-        <!-- <h1 class="sitename">Hayden</h1> -->
+        <canvas id="riveCanvas" width="50" height="50"></canvas> <!-- Adjust canvas size as per your design -->
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -83,9 +83,34 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
     </div>
   </header>
+
+  <!-- RIVE -->
+  <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const riveInstance = new rive.Rive({
+        src: 'hayden_logo.riv', // Path to .riv file
+        canvas: document.getElementById('riveCanvas'),
+        stateMachines: ['State Machine 1'], // Name of state machine
+        autoplay: true,
+      });
+
+      // Optional: Toggle animation on click if desired
+      document.getElementById('riveCanvas').addEventListener('click', () => {
+        riveInstance.play('Click'); // Adjust as needed based on your controls
+      });
+    });
+
+    const canvas = document.getElementById('riveCanvas');
+    const context = canvas.getContext('2d');
+    const devicePixelRatio = window.devicePixelRatio || 1;
+
+    // Set canvas dimensions
+    canvas.width = canvas.clientWidth * devicePixelRatio;
+    canvas.height = canvas.clientHeight * devicePixelRatio;
+  </script>
 
   <main class="main">
 
@@ -250,7 +275,8 @@
 
                     <div class="portfolio-details-slider swiper init-swiper">
                       <img src="assets/img/portfolio/Kiwi/Lean UX Canvas.png" alt="steps for lean ux">
-                      <img src="assets/img/portfolio/Kiwi/Finalized Persona.png" alt="finalized persona for kiwi" class="img-fluid">
+                      <img src="assets/img/portfolio/Kiwi/Finalized Persona.png" alt="finalized persona for kiwi"
+                        class="img-fluid">
 
                     </div>
                   </div>
@@ -338,7 +364,8 @@
                   <div class="col-lg-8">
 
                     <div class="portfolio-details-slider swiper init-swiper">
-                      <img src="assets/img/portfolio/Kiwi/Retrospective.png" alt="retrospective for kiwi" class="img-fluid">
+                      <img src="assets/img/portfolio/Kiwi/Retrospective.png" alt="retrospective for kiwi"
+                        class="img-fluid">
                     </div>
                   </div>
 
@@ -346,13 +373,20 @@
                     <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
                       <h2>Sprint 1 Week 2</h2>
                       <p>
-                        In Lean UX, the Retrospective is a crucial reflective practice, occurring at the end of a development
-                        cycle, where the team collectively reviews their recent work. This process involves openly discussing
-                        what was successful, what challenges were faced, and identifying areas for improvement. Central to
-                        this are three guiding questions: what worked well, what didn’t, and what could be improved. The goal
-                        is to foster a collaborative and honest environment, encouraging team members to provide constructive
-                        feedback. The key outcome of a Retrospective is the generation of actionable insights, with an aim of
-                        continuous improvement ensuring that the team evolves their processes and practices. A summary of the
+                        In Lean UX, the Retrospective is a crucial reflective practice, occurring at the end of a
+                        development
+                        cycle, where the team collectively reviews their recent work. This process involves openly
+                        discussing
+                        what was successful, what challenges were faced, and identifying areas for improvement. Central
+                        to
+                        this are three guiding questions: what worked well, what didn’t, and what could be improved. The
+                        goal
+                        is to foster a collaborative and honest environment, encouraging team members to provide
+                        constructive
+                        feedback. The key outcome of a Retrospective is the generation of actionable insights, with an
+                        aim of
+                        continuous improvement ensuring that the team evolves their processes and practices. A summary
+                        of the
                         team's retrospective can be seen below:
                       </p>
                     </div>
@@ -373,7 +407,8 @@
                   <div class="col-lg-8">
 
                     <div class="portfolio-details-slider swiper init-swiper">
-                      <img src="assets/img/portfolio/Kiwi/Finalized Persona.png" alt="finalized persona for kiwi" class="img-fluid">
+                      <img src="assets/img/portfolio/Kiwi/Finalized Persona.png" alt="finalized persona for kiwi"
+                        class="img-fluid">
                     </div>
                   </div>
 
@@ -381,22 +416,29 @@
                     <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
                       <h2>Sprint 2</h2>
                       <p>
-                        Throughout Sprint 2, the team focused on refining the prior MVPs (route creation, visual waypoints,
-                        and purchase portal), along with building out a TSA que length widget, trip planner widget, and a pop
+                        Throughout Sprint 2, the team focused on refining the prior MVPs (route creation, visual
+                        waypoints,
+                        and purchase portal), along with building out a TSA que length widget, trip planner widget, and
+                        a pop
                         up for restaurants and shops.
                       </p>
                       <br>
                       <h2>Sprint 2: Design Week 0</h2>
                       <p>
-                        During this week, the team revalidated through consistent testing, and reassessment of UI design to
+                        During this week, the team revalidated through consistent testing, and reassessment of UI design
+                        to
                         ensure it continued to meet user needs and align with business goals.
                         <br><br>
-                        This process included continuous user testing through interviews, adjusting initial assumptions, and
-                        refining the product MVPs based on new feedback. Through revalidation, the team made adjustments to
+                        This process included continuous user testing through interviews, adjusting initial assumptions,
+                        and
+                        refining the product MVPs based on new feedback. Through revalidation, the team made adjustments
+                        to
                         the Hypothesis Table, Product Backlog, and the Proto-Persona
                         <br><br>
-                        We learned that some of our initial assumptions were redundant and decided to pursue the MVPs within
-                        the product backlog that would integrate seamlessly with the user experience of the final product.
+                        We learned that some of our initial assumptions were redundant and decided to pursue the MVPs
+                        within
+                        the product backlog that would integrate seamlessly with the user experience of the final
+                        product.
                         <br><br>
                       </p>
                     </div>
@@ -417,7 +459,8 @@
                   <div class="col-lg-8">
 
                     <div class="portfolio-details-slider swiper init-swiper">
-                      <img src="assets/img/portfolio/Kiwi/Component set.png" alt="map component set for kiwi" class="img-fluid">
+                      <img src="assets/img/portfolio/Kiwi/Component set.png" alt="map component set for kiwi"
+                        class="img-fluid">
                     </div>
                   </div>
 
@@ -425,14 +468,20 @@
                     <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
                       <h2>Sprint 2 Week 1</h2>
                       <p>
-                        As we transitioned into Sprint 2, the focus shifted from foundational work to more detailed refinement
-                        of the MVPs. Sprint 2 involved rigorous testing and validation of our assumptions. The design efforts
-                        became more targeted, with modifications driven by insights from user feedback. This phase included
-                        structured user research and testing sessions, such as one-on-one interviews, usability tests, and
+                        As we transitioned into Sprint 2, the focus shifted from foundational work to more detailed
+                        refinement
+                        of the MVPs. Sprint 2 involved rigorous testing and validation of our assumptions. The design
+                        efforts
+                        became more targeted, with modifications driven by insights from user feedback. This phase
+                        included
+                        structured user research and testing sessions, such as one-on-one interviews, usability tests,
+                        and
                         surveys, aimed at gathering specific data to inform iterative improvements.
-      
-                        With the route creation MVP, I made further iterations to the interface of the map. Richy Carmillo an
-                        I built out a fully functional filter component for the map so that the user has the ability to filter
+
+                        With the route creation MVP, I made further iterations to the interface of the map. Richy
+                        Carmillo an
+                        I built out a fully functional filter component for the map so that the user has the ability to
+                        filter
                         between: gates, food, restrooms, exits, and the terminal train.
                       </p>
                     </div>
@@ -451,7 +500,8 @@
                   <div class="col-lg-8">
 
                     <div class="portfolio-details-slider swiper init-swiper">
-                      <img src="assets/img/portfolio/Kiwi/Map functionality.png" alt="finalized maps for kiwi" class="img-fluid">
+                      <img src="assets/img/portfolio/Kiwi/Map functionality.png" alt="finalized maps for kiwi"
+                        class="img-fluid">
                     </div>
                   </div>
 
@@ -461,14 +511,20 @@
                       <p>
                         In the final week of Sprint 2, the team pivoted towards final testing and validation of the
                         assumptions. This involved the final interviews of user research sessions. Concurrently, the
-                        development and evolution of the third proto-persona played a significant role, mirroring a deeper and
-                        more accurate understanding of who our primary user is. This persona evolved based on continuous user
-                        feedback, reflecting the team’s growing insights and adaptations throughout interviews in Sprint 1 and
+                        development and evolution of the third proto-persona played a significant role, mirroring a
+                        deeper and
+                        more accurate understanding of who our primary user is. This persona evolved based on continuous
+                        user
+                        feedback, reflecting the team’s growing insights and adaptations throughout interviews in Sprint
+                        1 and
                         2.
                         <br><br>
-                        Iterative refinement of our proto-persona ensured that we were moving in the right direction for our
-                        final iteration. The only change made to the final proto-persona was removing the need for "finding
-                        food to match dietary preferences." The team agreed on removing this assumed need due to the fact that
+                        Iterative refinement of our proto-persona ensured that we were moving in the right direction for
+                        our
+                        final iteration. The only change made to the final proto-persona was removing the need for
+                        "finding
+                        food to match dietary preferences." The team agreed on removing this assumed need due to the
+                        fact that
                         none of our interviewees aligned with this assumption.
                       </p>
                       <br>
@@ -477,10 +533,13 @@
                         The two main lessons I learned throughout this project:<br><br>
                         - Lean UX is a lot of work! It takes all hands on deck on a consistent basis for there to be a
                         cohesive
-                        and finalized product at the end of the final sprint. It was especially challenging to build out a
+                        and finalized product at the end of the final sprint. It was especially challenging to build out
+                        a
                         semi-functional Augmented Reality product within two sprints.<br><br>
-                        - I favor the process of Lean UX in comparison to Goal Directed due to the amount of interviews and
-                        the feedback received from those interviews. I felt that I was able to make valuable alterations to my
+                        - I favor the process of Lean UX in comparison to Goal Directed due to the amount of interviews
+                        and
+                        the feedback received from those interviews. I felt that I was able to make valuable alterations
+                        to my
                         MVP throughout the sprints based on all of the feedback received.
                       </p>
                     </div>

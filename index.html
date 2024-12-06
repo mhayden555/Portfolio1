@@ -6,7 +6,7 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Michelle Hayden | Design and Development</title>
   <meta name="description"
-    content="Explore the professional portfolio of Michelle Hayden. Discover expertise in graphic design, photography, and creative direction. Get in touch for collaboration and creative services." />
+    content="Explore the professional portfolio of Michelle Hayden. Discover expertise in graphic design, photography, and creative direction."/>
   <meta name="keywords"
     content="Michelle Hayden, portfolio, graphic design, photography, creative direction, digital art, visual storytelling" />
   <meta name="author" content="Michelle Hayden" />
@@ -66,7 +66,7 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <canvas id="riveCanvas" width="50" height="50"></canvas> <!-- Adjust canvas size as per your design -->
+        <canvas id="riveCanvas" width="50" height="50"></canvas>
       </a>
       <nav id="navmenu" class="navmenu">
         <ul>
@@ -80,37 +80,6 @@
       </nav>
     </div>
   </header>
-
-  <!-- RIVE -->
-  <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Initialize Rive instance
-      const riveInstance = new rive.Rive({
-        src: 'hayden_logo.riv', // Path to .riv file
-        canvas: document.getElementById('riveCanvas'),
-        stateMachines: ['State Machine 1'], // Replace with your state machine
-        autoplay: true,
-      });
-
-      // Adjust canvas for high DPI (Retina displays)
-      const canvas = document.getElementById('riveCanvas');
-      const context = canvas.getContext('2d');
-      const devicePixelRatio = window.devicePixelRatio || 1;
-
-      // Set canvas dimensions
-      canvas.width = canvas.clientWidth * devicePixelRatio;
-      canvas.height = canvas.clientHeight * devicePixelRatio;
-      context.scale(devicePixelRatio, devicePixelRatio);
-
-      // Optional: Toggle animation on click if desired
-      canvas.addEventListener('click', () => {
-        riveInstance.play('Click'); // Adjust as needed based on your controls
-      });
-    });
-
-  </script>
-
 
   <main class="main">
 
@@ -163,6 +132,37 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- RIVE -->
+  <script src="https://unpkg.com/@rive-app/canvas@2.9.1"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Initialize Rive instance
+      const riveInstance = new rive.Rive({
+        src: 'hayden_logo.riv', // Path to .riv file
+        canvas: document.getElementById('riveCanvas'),
+        stateMachines: ['State Machine 1'], // Name of state machine
+        autoplay: true,
+      });
+
+      // Adjust canvas for high DPI (Retina displays)
+      const canvas = document.getElementById('riveCanvas');
+      const context = canvas.getContext('2d');
+      const devicePixelRatio = window.devicePixelRatio || 1;
+
+      // Set canvas dimensions
+      canvas.width = canvas.clientWidth * devicePixelRatio;
+      canvas.height = canvas.clientHeight * devicePixelRatio;
+      context.scale(devicePixelRatio, devicePixelRatio);
+
+      // Optional: Toggle animation on click if desired
+      canvas.addEventListener('click', () => {
+        riveInstance.play('Click'); // Adjust based on your controls
+      });
+    });
+
+  </script>
 
 </body>
 
